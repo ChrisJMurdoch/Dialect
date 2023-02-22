@@ -157,7 +157,14 @@ function loop() {
 
 function onload() {
 
-    document.getElementById("front").value = "Analyse. British English words that are spelled with the double vowels ae or oe tend to be just spelled with an e in American English: Although there are exceptions to the rule. For example archaeology is spelt in the same way as British English but archeology would be acceptable in America but is incorrect in the UK. Analyze."
+    // Parse GET parameters
+    const params = new URLSearchParams(window.location.search);
+
+    // Set default text
+    if (params.get("text") === "demo")
+        document.getElementById("front").value = `American usage, in most cases, keeps the u in the word glamour, which comes from Scots, not Latin or French.  Glamor is sometimes used in imitation of the spelling reform of other -our words to -or.  Nevertheless, the adjective glamorous often drops the first "u".  Saviour is a somewhat common variant of savior in the US. The British spelling is very common for honour (and favour) in the formal language of wedding invitations in the US.  The name of the Space Shuttle Endeavour has a u in it because the spacecraft was named after British Captain James Cook's ship, HMS Endeavour.  The (former) special car on Amtrak's Coast Starlight train is known as the Pacific Parlour car, not Pacific Parlor.  Proper names such as Pearl Harbor or Sydney Harbour are usually spelled according to their native-variety spelling vocabulary.\r\rIn British English, some words from French, Latin or Greek end with a consonant followed by an unstressed -re.  In modern American English, most of these words have the ending -er.  The difference is most common for words ending -bre or -tre: British spellings calibre, centre, fibre, goitre, litre, lustre, manoeuvre, meagre, metre, mitre, reconnoitre, sabre, saltpetre, sepulchre, sombre and spectre all have -er in American spelling.`;
+    else if (params.get("text") !== null)
+        document.getElementById("front").value = params.get("text");
 
     // Set up listener
     document.getElementById("front").addEventListener('input', scan);
