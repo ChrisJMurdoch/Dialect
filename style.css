@@ -94,7 +94,6 @@ textarea {
     padding: 0 0.3em;
     height: 1.1em;
     line-height: 1em;
-    background-color: white;
     transform: translate(0, -100%);
     transition: transform 0.2s;
 }
