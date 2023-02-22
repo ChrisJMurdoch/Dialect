@@ -1,0 +1,116 @@
+
+/* Variables */
+
+:root {
+    --background_light: white;
+    --background_dark: ghostwhite;
+    --primary: rgb(168, 168, 168);
+    --text: rgb(58, 58, 58);
+}
+
+/* Global overrides */
+
+* {
+    box-sizing: border-box;
+}
+
+[contenteditable] {
+    outline: none;
+}
+
+/* Element overrides */
+
+html {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.2vmin;
+    background-color: var(--background_light);
+    color: var(--text);
+}
+
+body {
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+button {
+    border: 1px solid var(--primary);
+    border-radius: 0.5rem;
+    font-size: 0.75em;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: var(--background_light);
+    color: inherit;
+}
+button:hover {
+    background-color: var(--background_dark);
+}
+
+/* Custom elements */
+
+#editor {
+    position: relative;
+    width: 85%;
+    height: 100%;
+    line-height: 2.2em;
+}
+
+#front, #back {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+#back {
+    z-index: -1;
+    color: rgba(0, 0, 0, 0);
+}
+
+.swappable {
+    position: relative;
+    display: inline-block;
+    height: 1.85em;
+    border-bottom: 2px solid grey;
+    background-color: rgb(255, 255, 255);
+}
+.swappable.uk {
+    border-color: green;
+}
+.swappable.us {
+    border-color: red;
+}
+
+.hovertag {
+    position: absolute;
+    height: 1.1em;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.hovertag .inner {
+    padding: 0 0.3em;
+    height: 1.1em;
+    line-height: 1em;
+    background-color: white;
+    transform: translate(0, -100%);
+    transition: transform 0.2s;
+}
+.hovertag:hover .inner {
+    transform: translate(0, 0);
+}
+
+#sidebar {
+    width: 15%;
+    height: 100%;
+    background-color: var(--background_light);
+    box-shadow: 0 0 10px var(--primary);
+}
+#sidebar > * {
+    margin: 5% 5% 0 5%;
+    padding: 2%;
+    width: 90%;
+    text-align: center;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Dialect Editor</title>
+    <link rel="icon" type="image/x-icon" href="images/UK-US.ico">
+    <script src="data/uk-us.js"></script>
+    <script src="data/us-uk.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap">
+</head>
+
+<body>
+
+    <div id="editor">
+        <div id="front" contenteditable="plaintext-only" spellcheck="false" onChange="scan()">Analyse. British English words that are spelled with the double vowels ae or oe tend to be just spelled with an e in American English: Although there are exceptions to the rule. For example archaeology is spelt in the same way as British English but archeology would be acceptable in America but is incorrect in the UK. Analyze.</div>
+        <div id="back"></div>
+    </div>
+
+    <div id="sidebar">
+        <button type="button" onclick="scan();">These</button>
+        <button type="button" onclick="scan();">Buttons</button>
+        <button type="button" onclick="scan();">Don't</button>
+        <button type="button" onclick="scan();">Work</button>
+        <button type="button" onclick="scan();">Yet</button>
+        <button type="button" onclick="scan();">🙂</button>
+    </div>
+
+</body>
+
+<script defer>
+    onload();
+</script>
+
+</html>
