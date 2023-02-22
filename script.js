@@ -138,6 +138,13 @@ function swap(hovertagId) {
     document.getElementById('front').value = document.getElementById('back').innerText;
 }
 
+function convertAll(dest) {
+
+    for (hovertagId of Array.from( document.getElementsByClassName("hovertag") ).map(e => e.id))
+        if (getSwapword(document.getElementById(hovertagId).firstChild.innerText)[1] !== dest)
+            swap(hovertagId);
+}
+
 function loop() {
 
     syncHovertags();
