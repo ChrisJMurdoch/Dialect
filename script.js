@@ -1,10 +1,4 @@
 
-/*
-TODO:
- - Fix html in front & back
- - Fix space syncing in front & back
-*/
-
 // From: https://stackoverflow.com/a/28458409
 function escapeHTML(unsafe) {
     return unsafe.replace(/[&<"']/g, (c) => {
@@ -46,7 +40,7 @@ function scan() {
 
     // Get text from front and split into characters
     const front = document.getElementById('front');
-    const characters = Array.from(escapeHTML(front.innerText));
+    const characters = Array.from(escapeHTML(front.value));
 
     // Generate back text
     let output = "";
@@ -141,7 +135,7 @@ function swap(hovertagId) {
     hovertagInner.innerText = getSwapword(hovertagInner.innerText)[0];
 
     // Only time where front text is set - No caret because button has been clicked
-    document.getElementById('front').innerText = document.getElementById('back').innerText;
+    document.getElementById('front').value = document.getElementById('back').innerText;
 }
 
 function loop() {
@@ -152,6 +146,8 @@ function loop() {
 }
 
 function onload() {
+
+    document.getElementById("front").value = "Analyse. British English words that are spelled with the double vowels ae or oe tend to be just spelled with an e in American English: Although there are exceptions to the rule. For example archaeology is spelt in the same way as British English but archeology would be acceptable in America but is incorrect in the UK. Analyze."
 
     // Set up listener
     document.getElementById("front").addEventListener('input', scan);

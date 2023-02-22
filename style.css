@@ -47,6 +47,18 @@ button:hover {
     background-color: var(--background_dark);
 }
 
+textarea {
+    padding: 0;
+    resize: none;
+    border: none;
+    outline: none;
+    background: none;
+    line-height: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
 /* Custom elements */
 
 #editor {
@@ -54,6 +66,7 @@ button:hover {
     width: 85%;
     height: 100%;
     line-height: 2.2em;
+    white-space: pre-wrap;
 }
 
 #front, #back {
