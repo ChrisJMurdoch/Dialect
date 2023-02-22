@@ -54,6 +54,7 @@ textarea {
     height: 100%;
     line-height: 2.2em;
     white-space: pre-wrap;
+    overflow-x: hidden;
 }
 
 #front, #back {
@@ -61,7 +62,6 @@ textarea {
     left: 10%;
     top: 10%;
     width: 80%;
-    height: 80%;
 }
 
 #back {

@@ -74,6 +74,9 @@ function scan() {
 
     // Set back element
     back.innerHTML = output;
+
+    // Set size based on autosizing back
+    front.style.height = back.offsetHeight+100+"px";
 }
 
 function syncHovertags() {
