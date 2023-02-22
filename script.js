@@ -121,8 +121,8 @@ function syncHovertags() {
 
         const optionalSet = (obj, field, value) => { if (obj[field]!==value) obj[field]=value; }
 
-        optionalSet(hovertag.style, "top", swappableBounds.bottom+"px");
-        optionalSet(hovertag.style, "left", ( swappableBounds.left + ( swappableBounds.width-hovertag.getBoundingClientRect().width) / 2 ) + "px");
+        optionalSet(hovertag.style, "top", window.scrollY+swappableBounds.bottom+"px");
+        optionalSet(hovertag.style, "left", window.scrollX+swappableBounds.left + (swappableBounds.width-hovertag.getBoundingClientRect().width) / 2 + "px");
         optionalSet(hovertag.firstChild, "innerText", getSwapword(swappable.innerText)[0]);
     }
 }
